@@ -14,7 +14,6 @@ This document describes the proposed design of ChoreLang. The language draws ins
 8. Ship a native key-value store reminiscent of Lua tables for flexible, lightweight data structures.
 9. Provide an advanced regular expression and pattern matching engine in the standard library.
 
-10. Support a scripting mode with a built-in REPL for rapid experimentation.
 ## 2. Syntax Overview
 
 ChoreLang uses dance-inspired keywords to make code feel fluid:
@@ -98,41 +97,34 @@ if t["name"] =~ /st.+/ {
 ```
 
 The goal is to make common data manipulation and searching simple and fast without sacrificing elegance.
-## 7. Scripting Mode and REPL
 
-ChoreLang can execute scripts with `chore run` or open an interactive shell via `chore repl`. Modules load on demand so you can prototype quickly before compiling to a binary.
-
-## 8. Dance Diagrams
+## 7. Dance Diagrams
 
 ChoreLang treats every program as a choreography that can be visualized. The CLI provides a `chore chart` command (or `file.dance --chart`) that outputs a Mermaid diagram outlining each step of execution. These diagrams help developers and agents quickly grasp how data flows through the program.
 
-## 9. Compiler and Tooling
+## 8. Compiler and Tooling
 
 The compiler is planned to be written in Go. It will translate ChoreLang source to Go code, then leverage the Go toolchain for optimized binaries. Compilation errors are reported with full file and line information so problems can be corrected quickly. The toolchain includes:
 
 - **chore build**: Compile sources to a native executable.
 - **chore test**: Run tests.
 - **chore deploy**: Package and distribute your application.
-- **chore run**: Execute `.dance` files without compiling.
-- **chore repl**: Start an interactive shell.
 - **chore chart**: Generate Mermaid diagrams from `.dance` files to visualize execution.
 - **chore lint**: Enforce elegant style and highlight potential missteps.
 - **chore stage**: Fetch libraries and plugins from the shared Stage repository.
 
-## 10. Implementation Roadmap
+## 9. Implementation Roadmap
 
 1. **Prototype Parser and Lexer** – Define the syntax and create a translator to Go.
 2. **Concurrency Primitives** – Implement goroutine and channel mappings.
 3. **AI API Modules** – Integrate OpenAI and Ollama libraries with idiomatic wrappers.
 4. **Standard Library** – Provide utilities for file IO, networking, and basic data structures.
 5. **IDE Support and Visual Studio** – Develop the "Studio" environment to visualize programs as choreography.
-6. **Script Runner & REPL** – Implement `chore run` and an interactive shell for quick experimentation.
 
-## 11. Future Ideas
+## 10. Future Ideas
 
 - Live-coded choreography for interactive performances.
 - Advanced visualization tools that render real-time dance animations.
 - Community-driven extensions distributed through the Stage repository.
 
 ChoreLang invites developers to craft applications as if directing a performance. By blending practical tooling with artistic inspiration, it aims to make coding a graceful and enjoyable experience.
-
