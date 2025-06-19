@@ -18,6 +18,9 @@ ChoreLang is a proposal for a new compiled programming language inspired by the 
 * **Built-In Linter** - `chore lint` keeps code elegant and consistent.
 * **Stage Package Manager** - Install plugins and libraries with `chore stage`.
 
+Detailed specifications for each highlight are available in the
+[docs](docs/) directory.
+
 ## Getting Started
 
 ChoreLang is currently in the design phase. The toolchain is planned to be written in Go for ease of distribution. When ready, you will be able to install the compiler and runtime tools with a single command and begin dancing with code immediately.
