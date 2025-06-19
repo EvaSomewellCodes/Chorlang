@@ -11,6 +11,8 @@ This document describes the proposed design of ChoreLang. The language draws ins
 5. Provide native access to OpenAI and Ollama APIs for AI-driven applications.
 6. Include a unified file system API for cross-platform development and secure sandboxing.
 7. Fail fast with clear diagnostics so developers and agents quickly see where problems occur.
+8. Ship a native key-value store reminiscent of Lua tables for flexible, lightweight data structures.
+9. Provide an advanced regular expression and pattern matching engine in the standard library.
 
 ## 2. Syntax Overview
 
@@ -80,14 +82,29 @@ $ chore discover http://localhost:3000
 
 The compiler will generate stubs so you can call these APIs just like any other library.
 
-## 6. Dance Diagrams
+## 6. Key-Value Store and Pattern Matching
+
+ChoreLang's standard library includes a native key-value store inspired by Lua tables. These tables can hold mixed types and are optimized for performance so small data sets can be stored without external dependencies.
+
+Powerful regular expression handling is integrated directly into the language runtime. Patterns compile at build time when possible, and matching functions provide expressive captures and replacements.
+
+```chorelang
+dance t = chore.table()
+t["name"] = "step"
+if t["name"] =~ /st.+/ {
+    spin print("matched")
+}
+```
+
+The goal is to make common data manipulation and searching simple and fast without sacrificing elegance.
+## 7. Dance Diagrams
 
 ChoreLang treats every program as a choreography that can be visualized. The CLI
 provides a `chore chart` command (or `file.dance --chart`) that outputs a Mermai
 d diagram outlining each step of execution. These diagrams help developers and a
 gents quickly grasp how data flows through the program.
 
-## 7. Compiler and Tooling
+## 8. Compiler and Tooling
 
 The compiler is planned to be written in Go. It will translate ChoreLang source to Go code, then leverage the Go toolchain for optimized binaries. Compilation errors are reported with full file and line information so problems can be corrected quickly. The toolchain includes:
 
@@ -98,7 +115,7 @@ The compiler is planned to be written in Go. It will translate ChoreLang source 
 - **chore lint**: Enforce elegant style and highlight potential missteps.
 - **chore stage**: Fetch libraries and plugins from the shared Stage repository.
 
-## 8. Implementation Roadmap
+## 9. Implementation Roadmap
 
 1. **Prototype Parser and Lexer** – Define the syntax and create a translator to Go.
 2. **Concurrency Primitives** – Implement goroutine and channel mappings.
@@ -106,7 +123,7 @@ The compiler is planned to be written in Go. It will translate ChoreLang source 
 4. **Standard Library** – Provide utilities for file IO, networking, and basic data structures.
 5. **IDE Support and Visual Studio** – Develop the "Studio" environment to visualize programs as choreography.
 
-## 9. Future Ideas
+## 10. Future Ideas
 
 - Live-coded choreography for interactive performances.
 - Advanced visualization tools that render real-time dance animations.

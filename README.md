@@ -11,7 +11,9 @@ ChoreLang is a proposal for a new compiled programming language inspired by the 
 * **First-Class AI APIs** - OpenAI and Ollama integrations are part of the standard library, allowing AI calls without extra packages.
 * **Loud, Fast Failures** - Errors surface immediately with detailed diagnostics so both humans and agents know exactly what went wrong.
 * **Unified File System API** - Cross-platform file operations are built in, including secure sandboxing for agent-oriented programs.
+* **Native Key-Value Store** - Table-like data structures reminiscent of Lua tables come built in for lightweight storage.
 * **Fast API Discovery** - Tooling can auto-discover available APIs (local or remote) and generate stubs for quick prototyping.
+* **Advanced Regex Engine** - Pattern matching with unreasonably powerful regular expressions is part of the standard library.
 * **Dance Diagrams** - Use `chore chart file.dance` to generate mermaid charts that illustrate program flow.
 * **Built-In Linter** - `chore lint` keeps code elegant and consistent.
 * **Stage Package Manager** - Install plugins and libraries with `chore stage`.
