@@ -9,6 +9,8 @@ This document describes the proposed design of ChoreLang. The language draws ins
 3. Offer Python-like ease of use with a statically typed foundation.
 4. Encourage readable code with minimal boilerplate, following Go's style.
 5. Provide native access to OpenAI and Ollama APIs for AI-driven applications.
+6. Include a unified file system API for cross-platform development and secure sandboxing.
+7. Fail fast with clear diagnostics so developers and agents quickly see where problems occur.
 
 ## 2. Syntax Overview
 
@@ -61,15 +63,32 @@ dance resp = ai.complete("Write a short poem about dance")
 
 Calling these APIs should feel as seamless as any other standard library call.
 
-## 5. Compiler and Tooling
+## 5. File System and API Discovery
 
-The compiler is planned to be written in Go. It will translate ChoreLang source to Go code, then leverage the Go toolchain for optimized binaries. The toolchain includes:
+ChoreLang includes a cross-platform file system module that abstracts away OS differences. By default, file access is sandboxed so agents can operate safely. The same module provides a discovery mechanism that scans available APIs (both local services and network endpoints) and generates bindings automatically.
+
+```chorelang
+flow fs = chore.fs()
+dance content = fs.read("poem.txt")
+```
+
+Discovered APIs can be imported using a single command:
+
+```shell
+$ chore discover http://localhost:3000
+```
+
+The compiler will generate stubs so you can call these APIs just like any other library.
+
+## 6. Compiler and Tooling
+
+The compiler is planned to be written in Go. It will translate ChoreLang source to Go code, then leverage the Go toolchain for optimized binaries. Compilation errors are reported with full file and line information so problems can be corrected quickly. The toolchain includes:
 
 - **chore build**: Compile sources to a native executable.
 - **chore test**: Run tests.
 - **chore deploy**: Package and distribute your application.
 
-## 6. Implementation Roadmap
+## 7. Implementation Roadmap
 
 1. **Prototype Parser and Lexer** – Define the syntax and create a translator to Go.
 2. **Concurrency Primitives** – Implement goroutine and channel mappings.
@@ -77,7 +96,7 @@ The compiler is planned to be written in Go. It will translate ChoreLang source 
 4. **Standard Library** – Provide utilities for file IO, networking, and basic data structures.
 5. **IDE Support and Visual Studio** – Develop the "Studio" environment to visualize programs as choreography.
 
-## 7. Future Ideas
+## 8. Future Ideas
 
 - Visual debugging through dance diagrams.
 - Built-in linting that encourages elegant flows.
