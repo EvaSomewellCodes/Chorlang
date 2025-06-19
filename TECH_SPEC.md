@@ -97,12 +97,10 @@ if t["name"] =~ /st.+/ {
 ```
 
 The goal is to make common data manipulation and searching simple and fast without sacrificing elegance.
+
 ## 7. Dance Diagrams
 
-ChoreLang treats every program as a choreography that can be visualized. The CLI
-provides a `chore chart` command (or `file.dance --chart`) that outputs a Mermai
-d diagram outlining each step of execution. These diagrams help developers and a
-gents quickly grasp how data flows through the program.
+ChoreLang treats every program as a choreography that can be visualized. The CLI provides a `chore chart` command (or `file.dance --chart`) that outputs a Mermaid diagram outlining each step of execution. These diagrams help developers and agents quickly grasp how data flows through the program.
 
 ## 8. Compiler and Tooling
 
@@ -130,4 +128,3 @@ The compiler is planned to be written in Go. It will translate ChoreLang source 
 - Community-driven extensions distributed through the Stage repository.
 
 ChoreLang invites developers to craft applications as if directing a performance. By blending practical tooling with artistic inspiration, it aims to make coding a graceful and enjoyable experience.
-
