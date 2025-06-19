@@ -1,2 +1,36 @@
-# Dancecode
-Proposal for a programming language based on interpretive dance concepts
+# ChoreLang
+
+ChoreLang is a proposal for a new compiled programming language inspired by the elegance of interpretive dance. Programs in ChoreLang aim to be clear, expressive performances that transform data as gracefully as dancers move to music.
+
+## Highlights
+
+* **Native Compilation** - Generates small binaries that run on multiple targets with minimal runtime overhead.
+* **Concurrent by Design** - Leverages Go's concurrency primitives for effortless parallelism.
+* **Python-like Flexibility & Scala-like Precision** - Provides dynamic-style constructs with a robust type system and pattern matching.
+* **Go-style Clarity** - Keeps code readable and the toolchain lightweight.
+* **First-Class AI APIs** - OpenAI and Ollama APIs are built into the standard library, making AI-powered features a natural part of the language.
+
+## Getting Started
+
+ChoreLang is currently in the design phase. The toolchain is planned to be written in Go for ease of distribution. When ready, you will be able to install the compiler and runtime tools with a single command and begin dancing with code immediately.
+
+```
+# install chorelang (placeholder)
+$ chore install
+```
+
+### Example
+
+```chorelang
+sway i from 0 to 3 {
+    spin print("step", i)
+}
+```
+
+The example above shows a simple loop using dance-inspired keywords. Concurrency constructs will let you orchestrate parallel movements easily, while the standard library will give direct access to OpenAI and Ollama for language model interactions.
+
+## Technical Specification
+
+A detailed specification describing syntax, concurrency, and AI integrations lives in [TECH_SPEC.md](TECH_SPEC.md). The spec outlines how programs flow like choreography and how the compiler will be implemented.
+
+Stay tuned and join the conversation as we build a language where code truly dances.
