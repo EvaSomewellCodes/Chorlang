@@ -80,15 +80,25 @@ $ chore discover http://localhost:3000
 
 The compiler will generate stubs so you can call these APIs just like any other library.
 
-## 6. Compiler and Tooling
+## 6. Dance Diagrams
+
+ChoreLang treats every program as a choreography that can be visualized. The CLI
+provides a `chore chart` command (or `file.dance --chart`) that outputs a Mermai
+d diagram outlining each step of execution. These diagrams help developers and a
+gents quickly grasp how data flows through the program.
+
+## 7. Compiler and Tooling
 
 The compiler is planned to be written in Go. It will translate ChoreLang source to Go code, then leverage the Go toolchain for optimized binaries. Compilation errors are reported with full file and line information so problems can be corrected quickly. The toolchain includes:
 
 - **chore build**: Compile sources to a native executable.
 - **chore test**: Run tests.
 - **chore deploy**: Package and distribute your application.
+- **chore chart**: Generate Mermaid diagrams from `.dance` files to visualize execution.
+- **chore lint**: Enforce elegant style and highlight potential missteps.
+- **chore stage**: Fetch libraries and plugins from the shared Stage repository.
 
-## 7. Implementation Roadmap
+## 8. Implementation Roadmap
 
 1. **Prototype Parser and Lexer** – Define the syntax and create a translator to Go.
 2. **Concurrency Primitives** – Implement goroutine and channel mappings.
@@ -96,11 +106,11 @@ The compiler is planned to be written in Go. It will translate ChoreLang source 
 4. **Standard Library** – Provide utilities for file IO, networking, and basic data structures.
 5. **IDE Support and Visual Studio** – Develop the "Studio" environment to visualize programs as choreography.
 
-## 8. Future Ideas
+## 9. Future Ideas
 
-- Visual debugging through dance diagrams.
-- Built-in linting that encourages elegant flows.
-- A package repository called "Stage" for sharing dances (libraries).
+- Live-coded choreography for interactive performances.
+- Advanced visualization tools that render real-time dance animations.
+- Community-driven extensions distributed through the Stage repository.
 
 ChoreLang invites developers to craft applications as if directing a performance. By blending practical tooling with artistic inspiration, it aims to make coding a graceful and enjoyable experience.
 

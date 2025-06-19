@@ -12,6 +12,9 @@ ChoreLang is a proposal for a new compiled programming language inspired by the 
 * **Loud, Fast Failures** - Errors surface immediately with detailed diagnostics so both humans and agents know exactly what went wrong.
 * **Unified File System API** - Cross-platform file operations are built in, including secure sandboxing for agent-oriented programs.
 * **Fast API Discovery** - Tooling can auto-discover available APIs (local or remote) and generate stubs for quick prototyping.
+* **Dance Diagrams** - Use `chore chart file.dance` to generate mermaid charts that illustrate program flow.
+* **Built-In Linter** - `chore lint` keeps code elegant and consistent.
+* **Stage Package Manager** - Install plugins and libraries with `chore stage`.
 
 ## Getting Started
 
