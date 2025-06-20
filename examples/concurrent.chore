@@ -1,0 +1,13 @@
+// Concurrent example in Chorlang
+flow steps = flow channel<int>
+
+// Start a goroutine to send values
+start sway i from 0 to 5 {
+    send steps <- i
+}
+
+// Start another goroutine to receive values
+start sway i from 0 to 5 {
+    dance value = <-steps
+    spin print("Received:", value)
+}

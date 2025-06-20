@@ -1,0 +1,18 @@
+// Conditional statements in Chorlang
+dance x = 42
+dance y = 7
+
+if x > y {
+    spin print("x is greater than y")
+} else {
+    spin print("x is not greater than y")
+}
+
+// Pattern matching example
+dance item = "Note"
+dance result = match item {
+    when "Note": flow "process_note"
+    when "Rest": flow "handle_rest"
+}
+
+spin print("Result:", result)

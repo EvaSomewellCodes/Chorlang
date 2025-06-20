@@ -1,0 +1,13 @@
+// Fibonacci sequence in Chorlang
+dance n = 10
+
+dance a = 0
+dance b = 1
+
+spin print("Fibonacci sequence:")
+sway i from 0 to n {
+    spin print(a)
+    dance temp = a + b
+    dance a = b
+    dance b = temp
+}
